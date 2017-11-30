@@ -1,0 +1,94 @@
+<div class="col-md-6 col-md-offset-3 contr">
+    <h2>Register</h2>
+    <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" required />
+            <div *ngIf="f.submitted && !firstName.valid" class="help-block">First Name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+            <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" [(ngModel)]="model.username" #username="ngModel" required />
+            <div *ngIf="f.submitted && !username.valid" class="help-block">Username is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" required />
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !retypepassword.valid }">
+            <label for="password">Re-type Password</label>
+            <input type="password" class="form-control" name="retypepassword" [(ngModel)]="model.retypepassword" #retypepassword="ngModel" required />
+            <div *ngIf="f.submitted && !retypepassword.valid" class="help-block">Confirm Password is required</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+            <label for="lastName">Full Legal Name</label>
+            <input type="text" class="form-control" name="legalName" [(ngModel)]="model.legalName" #legalName="ngModel"/>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !businessType.valid }">
+            <label for="lastName">Business Type</label>
+            <input type="text" class="form-control" name="businessType" [(ngModel)]="model.businessType" #businessType="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !contactPerson.valid }">
+            <label for="lastName">Contact Person</label>
+            <input type="text" class="form-control" name="contactPerson" [(ngModel)]="model.contactPerson" #contactPerson="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !taxId.valid }">
+            <label for="taxId">Tax Id</label>
+            <input type="text" class="form-control" name="taxId" [(ngModel)]="model.taxId" #taxId="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !regAddress.valid }">
+            <label for="regAddress">Registered Address</label>
+            <input type="text" class="form-control" name="regAddress" [(ngModel)]="model.regAddress" #regAddress="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !city.valid }">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" [(ngModel)]="model.city" #city="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !stateProvReg.valid }">
+            <label for="stateProvReg">State/Province/Region</label>
+            <input type="text" class="form-control" name="stateProvReg" [(ngModel)]="model.stateProvReg" #stateProvReg="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !country.valid }">
+            <label for="Country">country</label>
+            <input type="text" class="form-control" name="country" [(ngModel)]="model.country" #country="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !zipPosCode.valid }">
+            <label for="zipPosCode">Zip/Postal Code</label>
+            <input type="text" class="form-control" name="zipPosCode" [(ngModel)]="model.zipPosCode" #zipPosCode="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !phone.valid }">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" name="phone" [(ngModel)]="model.phone" #phone="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !fax.valid }">
+            <label for="fax">Fax</label>
+            <input type="text" class="form-control" name="fax" [(ngModel)]="model.fax" #fax="ngModel"/>
+        </div>
+        
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !email.valid }">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel"/>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Register</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>
